@@ -1,0 +1,28 @@
+<div class="container text-center">
+  <h1>Dictionary</h1>
+</div>
+<div class="container">
+  <label for="word" class="form-label"></label>
+  <input type="text" id="word" class="form-control" (input)="translate($event.target.value)">
+  result: {{dictionary.mean}}
+</div>
+<div class="container">
+  <table class="table table-hover text-center">
+    <thead>
+    <tr>
+      <td>Word</td>
+      <td>Mean</td>
+      <td>Detail</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let element of dictionaries; index as i">
+      <td>{{element.word}}</td>
+      <td>{{element.mean}}</td>
+      <td>
+        <button class="btn btn-outline-info" [routerLink]="['/detail', element.word]">Detail</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

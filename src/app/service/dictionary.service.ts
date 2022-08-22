@@ -14,11 +14,11 @@ export class DictionaryService {
     this.dictionaries.push({word: 'Rat', mean: 'Chuot'});
   }
 
-  findAll() {
+  findAll(): Dictionary[] {
     return this.dictionaries;
   }
 
-  findByWord(word: string | null) {
+  findByWord(word: string | null): Dictionary[] {
     return this.dictionaries.filter(data => data.word === word);
   }
 }
